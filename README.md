@@ -12,6 +12,6 @@ The objectives of this project include.
 
 - Therefore, the goal of this project is to create an interperter for Monty ByteCodes files.
 
-# Contributors.
+### Contributors.
 -Ezra Christopher Mallo - 
 -Eboka Olisaemeka - ebokaolisaemeka@gmail.com
