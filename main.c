@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		file = fopen(argv[1], "r");
 		if (!file)
 		{
-			fprintf(stderr, "Error, can't open file %s\n", argv[1]);
+			fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 			exit(EXIT_FAILURE);
 		}
 
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 			op = strtok(NULL, " ");
 			n_value = op;
 
-			f = get_op(command);
+			f = get_op();
 			f(&stack, line_number);
 			line_number++;
 		}

@@ -6,7 +6,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdarg.h>
-
+#include <unistd.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -42,9 +42,9 @@ extern unsigned int line_number;
 extern char *command;
 extern stack_t *stack;
 void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number);
-void pint(stack_t **stack, __attribute__((unused)) unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 
-void (*get_op(char *s))(stack_t **, unsigned int);
+void (*get_op())(stack_t **, unsigned int);
 
 #endif /*MONTY_H*/

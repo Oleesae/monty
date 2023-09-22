@@ -8,9 +8,9 @@
  * Return: void
  */
 
-void (*get_op(char *s))(stack_t **, unsigned int)
+void (*get_op())(stack_t **, unsigned int)
 {
-	int i;
+	int i = 0;
 	instruction_t opcodes[] = {
 		{"push", push},
 		{"pall", pall},
@@ -18,13 +18,16 @@ void (*get_op(char *s))(stack_t **, unsigned int)
 		{NULL, NULL}
 	};
 
-	i = 0;
-	while (opcodes[i].opcode != NULL)
+	if (command == NULL)
+		return (NULL);
+
+
+	while (opcodes[i].opcode)
 	{
-		if (strcmp(opcodes[i].opcode, s) == 0)
+		if (strcmp(command, opcodes[i].opcode) == 0)
 			return (opcodes[i].f);
 		i++;
 	}
-	fprintf(stderr, "L<%d>: unknown instruction <%s>\n", line_number, command);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, command);
 	exit(EXIT_FAILURE);
 }
