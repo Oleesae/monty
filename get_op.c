@@ -3,7 +3,6 @@
 /**
  * get_op - returns a pointer to a function that matches
  * the string s
- * @s: string
  *
  * Return: void
  */
