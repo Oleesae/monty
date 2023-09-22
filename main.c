@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		file = fopen(argv[1], "r");
 		if (!file)
 		{
-			printf("Error, can't open file %s\n", argv[1]);
+			fprintf(stderr, "Error, can't open file %s\n", argv[1]);
 			exit(EXIT_FAILURE);
 		}
 
@@ -38,14 +38,13 @@ int main(int argc, char *argv[])
 
 			f = get_op(command);
 			f(&stack, line_number);
-			printf("command: %s, n_value: %s\n", command, n_value);
 			line_number++;
 		}
 		fclose(file);
 	}
 	else
 	{
-		printf("USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	return (EXIT_SUCCESS);
