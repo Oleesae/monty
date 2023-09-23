@@ -1,9 +1,9 @@
 #include "monty.h"
 
 stack_t *stack = NULL;
-char *command = NULL, *n_value = NULL;
+char *n_value = NULL;
 unsigned int line_number = 1;
-
+char *command = NULL;
 /**
  * main - function
  * @argc: number of args
@@ -17,8 +17,6 @@ int main(int argc, char *argv[])
 	FILE *file;
 	char buffer[1024], *op;
 
-	void (*f)(stack_t **, unsigned int);
-
 	if (argc == 2)
 	{
 		file = fopen(argv[1], "r");
@@ -28,16 +26,13 @@ int main(int argc, char *argv[])
 			exit(EXIT_FAILURE);
 		}
 
-
-		while (fgets(buffer, sizeof(buffer), file) != NULL)
+		while (fgets(buffer, sizeof(buffer) - 1, file) != NULL)
 		{
-			op = strtok(buffer, " ");
+			op = strtok(buffer, " \t\n");
 			command = op;
-			op = strtok(NULL, " ");
+			op = strtok(NULL, " \n\t");
 			n_value = op;
-
-			f = get_op();
-			f(&stack, line_number);
+			get_op();
 			line_number++;
 		}
 		fclose(file);

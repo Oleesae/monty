@@ -9,7 +9,7 @@
 
 void (*get_op())(stack_t **, unsigned int)
 {
-	int i = 0;
+	int i;
 	instruction_t opcodes[] = {
 		{"push", push},
 		{"pall", pall},
@@ -19,12 +19,14 @@ void (*get_op())(stack_t **, unsigned int)
 
 	if (command == NULL)
 		return (NULL);
-
-
-	while (opcodes[i].opcode)
+	i = 0;
+	while (opcodes[i].opcode != NULL && command)
 	{
 		if (strcmp(command, opcodes[i].opcode) == 0)
-			return (opcodes[i].f);
+		{
+			opcodes[i].f(&stack, line_number);
+			return (0);
+		}
 		i++;
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, command);

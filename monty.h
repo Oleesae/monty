@@ -37,8 +37,9 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern char *n_value;
+
 extern unsigned int line_number;
+extern char *n_value;
 extern char *command;
 extern stack_t *stack;
 void push(stack_t **stack, unsigned int line_number);
@@ -46,5 +47,7 @@ void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 
 void (*get_op())(stack_t **, unsigned int);
+
+int filter_str(char *s);
 
 #endif /*MONTY_H*/
