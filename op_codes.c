@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * is_valid_int - checks if a given string is a valid integer
+ * isvalid_int - checks if a given string is a valid integer
  * @str: string
  *
  * Return: 1 if str is a valid integer. 0 otherwise
