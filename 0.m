@@ -1,7 +1,6 @@
-push 45
-pall
-push 48
-push
-push 93
-pal
-pint
+push 1
+push 1024
+push -0
+push -1
+push -1024
+push 123a

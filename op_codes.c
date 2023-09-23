@@ -1,6 +1,31 @@
 #include "monty.h"
 
 /**
+ * is_valid_int - checks if a given string is a valid integer
+ * @str: string
+ *
+ * Return: 1 if str is a valid integer. 0 otherwise
+ */
+int isvalid_int(char *str)
+{
+	unsigned int i;
+
+	if (str == NULL)
+		return (0);
+
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] < '0' || str[i] > '9')
+		{
+			if (str[i] != '-' || i != 0)
+				return (0);
+		}
+	}
+
+	return (1);
+}
+
+/**
  * push - pushes an element to the stack
  * @stack: head of stack
  * @line_number: line number of op_codes
@@ -12,7 +37,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node, *head;
 
-	if (!n_value)
+	if (!n_value || !isvalid_int(n_value))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);

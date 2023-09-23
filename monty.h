@@ -48,6 +48,6 @@ void pint(stack_t **stack, unsigned int line_number);
 
 void (*get_op())(stack_t **, unsigned int);
 
-int filter_str(char *s);
+int isvalid_int(char *str);
 
 #endif /*MONTY_H*/
