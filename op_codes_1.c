@@ -40,7 +40,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	int len;
 	size_t temp_n;
 
-	len = length_of_stack(&head);
+	len = length_of_stack(stack);
 
 	if (len < 2)
 	{
