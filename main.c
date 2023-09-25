@@ -51,7 +51,9 @@ int main(int argc, char *argv[])
 		free(temp);
 	}
 
-	free(command);
-	free(n_value);
+	if (command)
+		free(command);
+	if (n_value)
+		free(n_value);
 	return (EXIT_SUCCESS);
 }
