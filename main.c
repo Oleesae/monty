@@ -50,5 +50,8 @@ int main(int argc, char *argv[])
 		stack = temp->next;
 		free(temp);
 	}
+
+	free(command);
+	free(n_value);
 	return (EXIT_SUCCESS);
 }
