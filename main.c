@@ -50,10 +50,5 @@ int main(int argc, char *argv[])
 		stack = temp->next;
 		free(temp);
 	}
-
-	if (command)
-		free(command);
-	if (n_value)
-		free(n_value);
 	return (EXIT_SUCCESS);
 }
