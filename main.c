@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
 {
 	FILE *file;
 	char buffer[1024], *op;
+	stack_t *temp;
 
 	if (argc == 2)
 	{
@@ -42,5 +43,13 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
+	temp = stack;
+	while (stack)
+	{
+		temp = stack;
+		stack = temp->next;
+		free(temp);
+	}
+		
 	return (EXIT_SUCCESS);
 }
