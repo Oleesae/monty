@@ -84,6 +84,31 @@ void add(stack_t **stack, unsigned int line_number)
 }
 
 /**
+ * sub - subtrancts the top element of the stack
+ * from the second top element
+ * @stack: pointer of head of the stack
+ * @line_number: line number of operation command
+ *
+ * Return: void
+ */
+
+void sub(stack_t **stack, unsigned int line_number)
+{
+	int temp_n, len;
+	
+	len = length_of_stack(stack);
+	if (len < 2)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n",\
+			line_number);
+		exit(EXIT_FAILURE);
+	}
+	temp_n = (*stack)->n;
+	(*stack)->next->n += temp_n;
+	pop(stack, line_number);
+}
+
+/**
  * nop - doesn't do anything
  * @stack: pointer to head of stack
  * @line_number: line number of operation command
