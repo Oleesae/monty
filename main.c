@@ -4,6 +4,7 @@ stack_t *stack = NULL;
 char *n_value = NULL;
 unsigned int line_number = 1;
 char *command = NULL;
+
 /**
  * main - function
  * @argc: number of args

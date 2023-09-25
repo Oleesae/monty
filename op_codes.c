@@ -114,6 +114,8 @@ void pint(stack_t **stack, unsigned int line_number)
 
 /**
  * pop - removes the top element of the stack
+ * @stack: pointer to head of stack
+ * @line_number: line number of the operation command
  *
  * Return: void
  */
