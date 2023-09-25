@@ -59,7 +59,6 @@ void push(stack_t **stack, unsigned int line_number)
 		head->prev = new_node;
 		*stack = new_node;
 	}
-	printf("%d\n", (*stack)->n);
 	(void)line_number;
 }
 
