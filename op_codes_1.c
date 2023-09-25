@@ -82,3 +82,17 @@ void add(stack_t **stack, unsigned int line_number)
 	(*stack)->n += tmp_n;
 	pop(&head, line_number);
 }
+
+/**
+ * nop - doesn't do anything
+ * @stack: pointer to head of stack
+ * @line_number: line number of operation command
+ *
+ * Return: void
+ */
+
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void) *stack;
+	(void)line_number;
+}
