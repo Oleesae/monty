@@ -133,4 +133,6 @@ void pop(stack_t **stack, unsigned int line_number)
 	head = *stack;
 	*stack = (*stack)->next;
 	free(head);
+	if (*stack)
+		(*stack)->prev = NULL;
 }
