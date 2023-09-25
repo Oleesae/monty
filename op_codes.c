@@ -76,7 +76,7 @@ void pall(stack_t **stack, unsigned int line_number)
 
 	head = *stack;
 	if (*stack == NULL)
-		exit(EXIT_FAILURE);
+		return;
 	while (head->prev != NULL)
 		head = head->prev;
 

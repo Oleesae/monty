@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 			exit(EXIT_FAILURE);
 		}
 
-		while (fgets(buffer, sizeof(buffer) - 1, file) != NULL)
+		while (fgets(buffer, 1024, file) != NULL)
 		{
 			op = strtok(buffer, " \t\n");
 			command = op;
