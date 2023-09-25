@@ -37,11 +37,9 @@ int length_of_stack(stack_t **stack)
 
 void swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *head, *temp1;
 	int len;
 	size_t temp_n;
 
-	head = *stack;
 	len = length_of_stack(&head);
 
 	if (len < 2)
@@ -51,10 +49,9 @@ void swap(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	temp1 = head->next;
-	temp_n = head->n;
-	head->n = temp1->n;
-	temp1->n = temp_n;
+	temp_n = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = temp_n;
 }
 
 /**
