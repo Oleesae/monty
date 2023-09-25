@@ -9,7 +9,7 @@
  * Return: void
  */
 
-void div(stack_t **stack, unsigned int line_number)
+void op_div(stack_t **stack, unsigned int line_number)
 {
 	int temp_n, len;
 
