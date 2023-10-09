@@ -20,6 +20,7 @@ void (*get_op())(stack_t **, unsigned int)
 		{"nop", nop},
 		{"sub", sub},
 		{"div", op_div},
+		{"mul", op_mul},
 		{NULL, NULL}
 	};
 
